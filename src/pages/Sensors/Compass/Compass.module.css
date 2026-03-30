@@ -1,0 +1,43 @@
+.compassWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compass {
+  padding: 8px;
+  margin-top: 8px;
+
+  align-self: center;
+  width: 200px;
+  height: 200px;
+
+  border: 4px solid var(--border-color);
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.compassDeviation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding: 8px;
+  background-color: var(--background-color);
+}
+.compassNorthArrow {
+  width: 4px;
+  height: 100%;
+  background-color: var(--border-color);
+  border-top: 10px solid var(--red-400);
+}
+
+.compassDirectionArrow {
+  position: absolute;
+  top: -8px;
+
+  background-color: var(--background-color);
+}

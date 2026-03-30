@@ -1,0 +1,33 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gameFieldWrapper {
+  align-self: center;
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  border: 1px solid var(--border-color);
+}
+
+.ball {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+
+  background-color: var(--purple-400);
+}
+
+.buttonName {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.buttonName_pressed {
+  background-color: var(--purple-400);
+  color: var(--gray-50);
+}

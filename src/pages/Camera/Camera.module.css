@@ -1,0 +1,29 @@
+.pageContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+}
+
+.bottomToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.codesExamples {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+
+  img {
+    min-width: 256px;
+    object-fit: contain;
+  }
+}
+
+.productText {
+  margin-right: 8px;
+}

@@ -1,0 +1,70 @@
+/* --- Нормализованная версия ваших стилей --- */
+.react-aria-Switch {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 0.5rem; /* было 0.499625rem */
+  font-size: 1rem; /* было 1.000125rem */
+  color: var(--text-color);
+  forced-color-adjust: none;
+  cursor: pointer; /* Добавляем для лучшего UX */
+}
+
+/* Трек переключателя */
+.react-aria-Switch .indicator {
+  width: 3rem;
+  height: 1.5rem;
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
+  border-radius: 9999px;
+  transition: background-color 200ms, border-color 200ms;
+}
+
+/* "Ползунок" (thumb) */
+.react-aria-Switch .indicator:before {
+  content: "";
+  display: block;
+  margin: 2px;
+  width: 1rem;
+  height: 1rem;
+  background: var(--highlight-background);
+  border-radius: 50%;
+  transition: transform 200ms, background-color 200ms;
+}
+
+.react-aria-Switch[data-pressed] .indicator {
+  border-color: var(--border-color-pressed);
+}
+.react-aria-Switch[data-pressed] .indicator:before {
+  background: var(--highlight-background-pressed);
+}
+
+.react-aria-Switch[data-selected] .indicator {
+  background: var(--highlight-background);
+  border-color: var(--highlight-background);
+}
+.react-aria-Switch[data-selected] .indicator:before {
+  background: var(--field-background);
+  transform: translateX(1.5rem);
+}
+
+.react-aria-Switch[data-selected][data-pressed] .indicator {
+  background: var(--highlight-background-pressed);
+  border-color: var(--highlight-background-pressed);
+}
+
+.react-aria-Switch[data-focus-visible] .indicator {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+
+.react-aria-Switch[data-disabled] {
+  color: var(--text-color-disabled);
+  cursor: not-allowed;
+}
+.react-aria-Switch[data-disabled] .indicator {
+  border-color: var(--border-color-disabled);
+}
+.react-aria-Switch[data-disabled] .indicator:before {
+  background: var(--border-color-disabled);
+}

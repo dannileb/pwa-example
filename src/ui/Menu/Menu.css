@@ -1,0 +1,100 @@
+.react-aria-Menu {
+  max-height: inherit;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 4px;
+  min-width: 150px;
+  outline: none;
+}
+
+.react-aria-Menu .react-aria-Header {
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  color: var(--text-color-secondary);
+}
+
+.react-aria-Menu .react-aria-MenuSection:not(:first-child) {
+  margin-top: 8px;
+}
+
+.react-aria-MenuItem {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "icon label kbd chevron"
+    "icon desc  kbd chevron";
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  column-gap: 12px;
+
+  margin: 2px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+
+  outline: none;
+  cursor: pointer;
+  color: var(--text-color);
+  user-select: none;
+  forced-color-adjust: none;
+  transition: background-color 150ms, color 150ms;
+
+  &[data-focused],
+  &[data-open] {
+    background: var(--highlight-background);
+    color: var(--highlight-foreground);
+  }
+
+  &[data-disabled] {
+    color: var(--text-color-disabled);
+    cursor: not-allowed;
+  }
+
+  [slot="label"] {
+    grid-area: label;
+    font-weight: 500;
+  }
+  [slot="description"] {
+    grid-area: desc;
+    font-size: 0.8rem;
+    color: var(--text-color-secondary);
+  }
+  kbd {
+    grid-area: kbd;
+    font-family: monospace;
+    text-align: end;
+    font-size: 0.8rem;
+    color: var(--text-color-secondary);
+  }
+
+  &[data-selection-mode] {
+    padding-left: 28px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    &[data-selection-mode="multiple"][data-selected]::before {
+      content: "✓";
+    }
+
+    &[data-selection-mode="single"][data-selected]::before {
+      content: "●";
+      transform: scale(0.6);
+    }
+  }
+}
+
+.react-aria-Popover[data-trigger="SubmenuTrigger"] {
+  &[data-placement="right"] {
+    margin-left: -5px;
+  }
+  &[data-placement="left"] {
+    margin-right: -5px;
+  }
+}

@@ -1,0 +1,28 @@
+.navBar {
+  padding-bottom: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.navBar:empty {
+  display: none;
+}
+
+.navBarLink_back {
+  justify-self: start;
+}
+.navBarTitle {
+  grid-column-start: 2;
+}
+.navBarLink_forward {
+  justify-self: end;
+}
+
+.navBarIcon {
+  font-size: 24px;
+}
+.navBarIcon_pressed {
+  background-color: var(--highlight-foreground-pressed);
+}
